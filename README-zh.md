@@ -1,0 +1,396 @@
+<div align="center">
+
+[English](README.md)｜简体中文
+
+</div>
+
+---
+
+> Note:
+> 
+> 我已经有了新的更新计划，学业之余会尽量抽空继续更新。  
+> 如果你需要一个稳定的跨域解决方案，可以试试内置了本地 CORS 服务的 [安卓版](https://github.com/Eq52/Bismuth-Player/releases/download/v9.6.0/Bismuth_9.6.0_CORS.apk)；另外，从**V9.5.0** 开始，我们也首次推出了内置 [PyCorsLocalProxy](https://github.com/Eq52/PyCorsLocalProxy) 的 [Windows 版本](https://github.com/Eq52/Bismuth-Player/releases/download/v9.5.0/Bismuth-V9.5.0.exe)，有需要的话也可以直接用。  
+
+---
+
+# <div align="center"> <h3>Bismuth Player —— 如"秘"般美丽的影视播放壳子</h3></div>
+
+<div align="center"> <p>一款精心设计的Web端影视播放应用，支持自定义影视源、优雅的动画效果和完善的缓存机制</p> </div>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/version-V9.6.0-purple?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-5.9-blue?style=for-the-badge&logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Vite-7-blue?style=for-the-badge&logo=vite" alt="Vite">
+</div>
+<div align="center">
+  <a href="https://github.com/Eq52/Bismuth-Player">
+    <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" alt="GitHub">
+    <a href="https://zread.ai/Eq52/Bismuth-Player" target="_blank"><img src="https://img.shields.io/badge/Ask_Zread-_.svg?style=for-the-badge&color=00b0aa&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff" alt="zread"/></a>
+  </a>
+</div>
+
+<div align="center">
+  <a href="https://www.star-history.com/?repos=eq52%2Fbismuth-player&type=date&legend=top-left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=eq52/bismuth-player&type=date&theme=dark&legend=top-left" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=eq52/bismuth-player&type=date&legend=top-left" />
+      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=eq52/bismuth-player&type=date&legend=top-left" />
+    </picture>
+  </a>
+</div>
+
+
+---
+
+## 说明
+
+> 本项目约等于是AI生成的,我只是检测问题、提出优化方向,使用模型如下：豆包, Kimi, GLM-5.3-Flash/5/5-Turbo/4.7/4.6/4.6V/4.5, Deepseek-R1/Chat (项目启动想法萌芽时提供帮助)
+
+---
+
+## 🚀 在线部署
+
+### 在线 Demo
+
+访问 [Demo](https://eq52.github.io/Bismuth-Player/) 立即体验
+
+### 自行部署
+
+选择以下任一平台，点击按钮即可快速创建自己的 Bismuth Player 实例：
+
+<table>
+  <tr>
+    <td>
+      <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FEq52%2FBismuth-Player">
+        <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+      </a>
+    </td>
+    <td>
+      <a href="https://app.netlify.com/start/deploy?repository=https://github.com/Eq52/Bismuth-Player">
+        <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
+      </a>
+    </td>
+    <td>
+      <a href="https://deploy.workers.cloudflare.com/?url=https://github.com/Eq52/Bismuth-Player">
+        <img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare"/>
+      </a>
+    </td>
+  </tr>
+</table>
+
+> ☁️ **Cloudflare Pages 已内置支持**：仓库根目录提供 `wrangler.toml`，`public/` 内置 `_redirects`（SPA 回退）与 `_headers`（安全头 + 静态资源长缓存），点击上方按钮即可直接部署，无需额外配置。
+
+### 本地部署
+
+[了解](README-zh.md#-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)
+
+---
+
+## 其他版本
+
+Material Design version created by `Minimax Agent` : [前往查看](https://agent.minimaxi.com/share/381725144404201)
+
+---
+
+## ✨ 特性
+
+### 🎨 精美界面
+- **深色主题** - 护眼的暗黑配色方案
+- **渐变设计** - 紫色到粉色的优雅渐变
+- **宋体字体** - 中文显示更加清晰美观
+- **响应式布局** - 完美适配手机和桌面端
+
+### 🎬 核心功能
+- **自定义影视源** - 支持添加多个苹果CMS API源 (json格式)
+- **内置播放器 ([SimPlayer](https://github.com/Eq52/Sim-Player))** - 集成轻量播放器，支持MP4/WebM/HLS，含截图、画中画、倍速播放、进度记忆
+- **外部播放器支持** - 支持自定义播放器URL，以iframe方式嵌入
+- **两级分类导航** - 从API动态加载分类，顶级分类Tab + 子分类标签（利用苹果CMS `type_pid` 层级结构）
+- **收藏功能** - 详情页❤️按钮收藏影片，专属收藏标签页支持完整管理（查看/播放/删除/清空）
+- **🔞 伦理片屏蔽** - 影视源设置中可选开启，开启后首页隐藏伦理片分类，所有列表过滤伦理片内容
+- **搜索功能** - 快速搜索你想要的内容
+- **播放历史** - 自动记录观看进度，支持一键继续播放（首页右上角按钮进入）
+- **选集播放** - 清晰的剧集选择界面，可滚动剧集网格，当前集数脉冲高亮
+
+### 🚀 性能优化
+- **API缓存** - 智能缓存API响应，减少网络请求
+- **图片懒加载** - 按需加载图片，节省流量
+- **骨架屏加载** - 优雅的加载状态展示
+- **页面切换动画** - 流畅的过渡效果
+
+### 💫 动画效果
+- **启动屏幕** - 优雅的应用启动动画
+- **页面切换** - 滑动进入/退出的页面转场
+- **图片加载** - 渐显动画加载图片
+- **交互反馈** - 按钮悬停和点击动效
+
+---
+
+## 🛠️ 技术栈
+
+| 技术 | 版本 | 用途 |
+|------|------|------|
+| React | 19.2 | 前端框架 |
+| TypeScript | 5.9 | 类型安全 |
+| Vite | 7.2 | 构建工具 |
+| Tailwind CSS | 3.4 | 样式框架 |
+| shadcn/ui | - | UI组件库 |
+| hls.js | 1.6 | HLS流媒体 |
+| Lucide React | 0.562 | 图标库 |
+
+---
+
+## 📦 快速开始
+
+### 环境要求
+- Node.js >= 20.19(Vite 7 要求,推荐 20/22/24 LTS)
+- npm 或 bun
+
+### 安装依赖
+```bash
+npm install
+# 或
+bun install
+```
+
+### 开发模式
+```bash
+npm run dev
+# 或
+bun run dev
+```
+
+### 构建生产版本
+```bash
+npm run build
+# 或
+bun run build
+```
+
+### 预览构建结果
+```bash
+npm run preview
+# 或
+bun run preview
+```
+
+---
+
+## ⚙️ 配置说明
+
+### 添加影视源
+1. 进入「设置」页面
+2. 点击「添加」按钮
+3. 填写影视源信息：
+   - **ID**: 唯一标识符（如：mysource）
+   - **名称**: 显示名称（如：我的源）
+   - **API地址**: 苹果CMS API地址
+
+### 播放器配置
+在设置页面可以配置自定义播放器地址，支持任何支持URL参数的播放器。
+
+### CORS代理
+如果遇到跨域问题，可以在设置中配置CORS代理地址。也可以完全关闭CORS代理，直接请求影视源API。
+
+### 缓存管理
+- 启用/禁用API缓存
+- 查看缓存统计
+- 清除缓存
+
+---
+
+## 📱 界面预览
+
+### 移动端
+- 底部导航栏
+- 紧凑的卡片布局
+- 手势友好的交互
+
+### 桌面端
+- 左侧固定侧边栏
+- 宽屏网格布局
+- 悬停预览效果
+
+---
+
+## 🔧 API支持
+
+支持标准苹果CMS API格式：
+- 列表接口: `?ac=videolist&pg=1`
+- 详情接口: `?ac=videolist&ids=123`
+- 搜索接口: `?ac=videolist&wd=关键词`
+
+---
+
+## 📁 项目结构
+
+```
+Bismuth-Player/
+├── src/
+│   ├── components/       # 可复用组件
+│   │   ├── ui/          # shadcn/ui 组件
+│   │   ├── SimPlayer.tsx
+│   │   ├── BottomNav.tsx
+│   │   └── VideoCard.tsx
+│   ├── pages/           # 页面组件
+│   │   ├── HomePage.tsx
+│   │   ├── SearchPage.tsx
+│   │   ├── DetailPage.tsx
+│   │   ├── PlayerPage.tsx
+│   │   ├── HistoryPage.tsx
+│   │   ├── SettingsPage.tsx
+│   │   └── settings/       # 设置子页面
+│   │       ├── VideoSourcePage.tsx
+│   │       ├── PlayerSettingsPage.tsx
+│   │       ├── CorsProxyPage.tsx
+│   │       ├── CacheSettingsPage.tsx
+│   │       └── AboutPage.tsx
+│   ├── services/        # 服务层
+│   │   ├── api.ts       # API请求
+│   │   ├── cache.ts     # 缓存服务
+│   │   └── storage.ts   # 本地存储
+│   ├── types/           # TypeScript类型
+│   ├── App.tsx          # 主应用组件
+│   ├── App.css          # 全局样式
+│   └── main.tsx         # 入口文件
+├── public/              # 静态资源
+├── package.json
+├── vite.config.ts
+└── README.md
+```
+
+---
+
+## 🎯 版本更新
+
+> 完整更新日志: [CHANGELOG.md](CHANGELOG.md)
+
+### V9.6.0
+- ✨ 独立筛选页 — 首页默认全量展示，搜索框旁「筛选」按钮进入独立筛选页（两级分类联动 + 无限滚动）
+- ✨ 历史/收藏源标注 — 每张卡片标注来源影视源；跨源播放从标注源拉取信息，不影响当前选中源
+- ✨ 删源兜底 — 标注源被删除时详情/播放页显示专属错误提示；条目保留 30 分钟宽限窗口（同 ID 重新添加源即可恢复），到期自动清理
+- 🐛 修复历史/收藏身份键（vod_id + sourceId）— 不同源同 ID 条目不再互相覆盖/误删
+
+### V9.5.1
+- 🐛 修复 favicon 404 — `index.html` 引用了不存在的 `/vite.svg`（Vite 模板残留），改为真实应用图标
+- 🐛 修正 Node.js 版本要求 — Vite 7 实际要求 >= 20.19，同步两份 README 并为 `package.json` 补充 `engines` 字段
+- ⚡ 代码分割 — `manualChunks` 将 902KB 单包拆分为 hls/react/vendor，hls.js 按需动态加载，首包 JS gzip 体积降低约 59%
+- 📦 新增 GitHub Pages 自动发布工作流 — push 到 main 自动构建部署，支持手动触发
+- ☁️ 新增 Cloudflare Pages 一键部署支持 — `wrangler.toml` + `_redirects`（SPA 回退）+ `_headers`（安全头与长缓存），三平台部署按钮（Vercel/Netlify/Cloudflare）全部开箱即用
+
+### V9.5.0
+- 🐛 修复播放页剧集列表无法上下滑动 — 移动端添加 `flex-1 max-h-[45vh]`，剧集多时可独立滚动
+- 🐛 修复续播 Bug — `PlayerPage` useEffect 缺少 `initialEpisode` 依赖
+- ✨ 新增 🔞 伦理片屏蔽设置 — 影视源设置中开启后，首页隐藏伦理片分类，列表过滤伦理片视频
+- ✨ 新增收藏功能 — 详情页❤️按钮 + 专属收藏标签页，支持完整收藏管理
+- 📱 导航重构 — 历史移至首页右上角按钮，底部导航精简为4项（首页/搜索/收藏/设置）
+- 📱 全局滚动条美化 + 当前集数脉冲动画效果
+
+### V9.4.0
+- 🐛 修复构建失败 — 移除49个未使用的 shadcn/ui 僵尸组件，补全缺失的 `index.html` Vite 入口文件（之前被错误地加入了 .gitignore）
+- 🐛 修复分类永远回退到硬编码列表 — `getCategories()` 改为直接请求基础URL（苹果CMS在带 `?ac=videolist` 参数时不返回 `class` 字段）
+- 🐛 修复 localStorage 键名不统一 — `video_sources`/`current_source_id` 改为 `bismuth_` 前缀，带旧数据自动一次性迁移
+- 🐛 修复分页字段类型不一致 — `safeApiResponse()` 用 `Number()` 归一化所有分页字段，避免字符串比较错误
+- 🐛 修复子分类"全部"标签显示空结果 — 点击顶级分类后自动选中第一个子分类（苹果CMS顶级分类下没有直接内容）
+- ✨ 新增两级分类导航 — 利用 `type_pid` 层级结构：顶级分类Tab + 子分类标签
+- 🔧 更新 `.gitignore`，不再忽略 `/index.html`（构建可复现性的关键修复）
+
+### V9.3.0
+- 🐛 修复添加首个影视源后首页不刷新的问题
+- 🐛 修复切换影视源后分类列表不更新的问题
+- 🐛 修复 SimPlayer 在 iOS 上 crossOrigin 属性冲突导致 HLS 播放失败
+- 🐛 修复 API 响应未验证，畸形响应导致 TypeError 崩溃
+- 🐛 修复 `components.json` 指向错误的 Tailwind 配置文件
+- 🔧 更新版本号回退值为 V9.3.0
+
+### V9.2.1
+- 🐛 修复 VideoCard 引用已移除的 `imageError` 导致运行时报错
+- 🐛 替换原生 `loading="lazy"` 为 IntersectionObserver，解决离开主页后后台持续加载图片
+- 🐛 修复组件卸载时清空 `img.src` 触发控制台报错
+- 🐛 修复 `HomePage` 分页判断引用未定义变量 `limit`，导致无限请求死循环
+- 🧹 移除未使用的 `CACHE_TTL.search` 死代码
+
+### V9.2
+- 🐛 修复 `parsePlayUrls` 不处理多播放源 `$$$` 分隔符的问题
+- 🐛 修复 iOS Safari HLS 事件监听器内存泄漏和错误处理器竞态条件
+- 🐛 修复 `DetailPage` 切换视频时骨架屏不重置
+- 🐛 修复 `PlayerPage` 集数不随 prop 同步的问题
+- 🐛 修复 `fetchWithRetry` 非 OK 响应错误信息不准确和连接池耗尽问题
+- 🐛 修复版本号 fallback 不匹配的问题
+- ✨ SimPlayer 新增音量滑块（悬停音量图标展开）
+- ✨ 改进分页判断逻辑，使用 API 元数据提高准确性
+- 🧹 移除未使用的 `_viewKey` 和 `imageError` 状态
+- ⚡ 优化 App、PlayerPage 和 SimPlayer 的重渲染性能
+- 📁 新增 `.gitignore`，从仓库中移除构建产物
+
+<details>
+<summary>V9.1 及更早版本</summary>
+
+### V9.1
+- 🐛 修复设置页崩溃问题 — `ArrowLeft` 图标未导入
+- 🐛 修复 CORS 代理双重嵌套严重 Bug
+- 🐛 修复 Toast 通知不可见
+- 🐛 修复自动续播设置无效
+- 🧹 清理未使用的 `carousel.tsx` 组件
+
+### V9.0
+- 🏗️ **设置页全面重构** — 每个设置项独立为单独页面
+- ✨ CORS 代理新增排序功能
+- ✨ 缓存设置页新增缓存策略详情
+- 🔧 统一 localStorage 存储键命名规范
+
+### V8.3
+- 🐛 修复 iOS Safari 下 HLS 播放卡顿和 CORS 预检开销问题
+
+### V8.2
+- 🐛 修复 iOS Safari 下全屏按钮无响应的问题
+
+### V8.1
+- 🐛 修复进度条无法点击和拖动的问题
+- ✨ 新增「检查更新」功能
+
+### V8
+- ✨ 集成 SimPlayer 内置播放器
+- ✨ 内置播放器功能：截图、画中画、倍速播放、进度记忆
+- ✨ CORS代理开关
+
+### V7
+- ✨ 新增启动屏幕、页面切换、骨架屏动画
+- 🐛 移除PWA功能
+
+### V6 ~ V3
+- 各类 UI 优化和 Bug 修复
+
+</details>
+
+---
+
+## 💡 灵感来源
+
+本项目的灵感来源于 [LibreTV](https://github.com/LibreSpark/LibreTV/tree/main)，当时觉得 [LibreTV](https://github.com/LibreSpark/LibreTV/tree/main)好用但需要后端想着弄个没后端的，于是本项目就在我和AI们的聊天中诞生了... 总之感谢该项目提供的创意启发。
+
+---
+
+## 📄 许可证
+
+本项目基于 [Apache License 2.0](LICENSE) 开源。
+
+---
+
+## 🙏 免责声明
+
+**Bismuth Player 仅为播放工具壳子，不提供任何影视内容或资源。**
+
+- 本应用不存储、不托管、不传播任何影视内容
+- 所有内容来源于用户自行配置的第三方影视源
+- 用户需确保所使用的内容来源合法合规
+- 使用者应自行承担因使用非法来源产生的法律责任
+- 开发者不对任何第三方内容或用户行为负责
+
+**使用本应用即表示您已阅读并同意以上条款。**
+
+---
+
+<div align="center">
+  <p>Made with 💜 by <a href="https://github.com/Eq52">Eq52</a></p>
+</div>

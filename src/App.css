@@ -1,0 +1,521 @@
+/* 全局样式 */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: 'SimSun', '宋体', 'Songti SC', 'Noto Serif SC', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* 滚动条隐藏 */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* 全局滚动条美化 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Firefox 滚动条 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+/* 文本截断 */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 安全区域适配 */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* 触摸优化 */
+button, a {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 禁用文本选择 */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ========== 页面切换动画 ========== */
+
+/* 页面进入动画 - 从右滑入 */
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 页面退出动画 - 向左滑出 */
+@keyframes pageSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+/* 详情页/播放器进入 - 从底部滑入 */
+@keyframes pageSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 详情页/播放器退出 - 向下滑出 */
+@keyframes pageSlideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+/* 淡入淡出动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* 缩放动画 */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 动画类 */
+.page-slide-in {
+  animation: pageSlideIn 0.3s ease-out forwards;
+}
+
+.page-slide-up {
+  animation: pageSlideUp 0.35s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* ========== 加载动画 ========== */
+
+/* 旋转加载 */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* 脉冲加载 */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 弹跳加载 */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* 波浪加载 */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* 骨架屏样式 */
+.skeleton {
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #252547 50%,
+    #1a1a2e 100%
+  );
+  background-size: 200% 200%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* ========== 启动加载屏幕 ========== */
+@keyframes startupPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.startup-loader {
+  animation: startupPulse 1.5s ease-in-out infinite;
+}
+
+/* ========== 特效 ========== */
+
+/* 渐变文字 */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 玻璃态效果 */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 发光效果 */
+.glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 40px rgba(168, 85, 247, 0.1);
+}
+
+/* ========== 响应式布局 ========== */
+
+/* 电脑端全宽布局 */
+@media (min-width: 768px) {
+  #root {
+    max-width: none;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+/* 电脑端侧边栏样式 */
+@media (min-width: 768px) {
+  .desktop-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 72px;
+    background: linear-gradient(180deg, #0f0f0f 0%, #0a0a0a 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+    z-index: 50;
+  }
+
+  .desktop-main {
+    margin-left: 72px;
+  }
+
+  .desktop-bottom-nav {
+    display: none;
+  }
+}
+
+/* 移动端隐藏侧边栏 */
+@media (max-width: 767px) {
+  .desktop-sidebar {
+    display: none;
+  }
+
+  .desktop-main {
+    margin-left: 0;
+  }
+
+  .desktop-bottom-nav {
+    display: block;
+  }
+}
+
+/* ========== 其他样式 ========== */
+
+/* 选中效果 */
+::selection {
+  background: rgba(168, 85, 247, 0.3);
+  color: white;
+}
+
+/* 输入框焦点 */
+input:focus, textarea:focus {
+  outline: none;
+}
+
+/* 按钮禁用状态 */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 滚动条美化（可选显示） */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========== SimPlayer 播放器样式 ========== */
+
+/* 隐藏原生视频控件 */
+.sim-player-container video::-webkit-media-controls {
+  display: none !important;
+}
+.sim-player-container video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+/* 右键菜单动画 */
+@keyframes context-menu-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-context-menu-in {
+  animation: context-menu-in 0.15s ease-out both;
+}
+
+/* 淡入动画 */
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out both;
+}
+
+/* 弹窗动画 */
+@keyframes dialog-in {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-dialog-in {
+  animation: dialog-in 0.2s ease-out both;
+}
+
+/* 截图闪光 */
+@keyframes screenshot-flash {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+.animate-screenshot-flash {
+  animation: screenshot-flash 0.3s ease-out both;
+}
+
+/* 封面淡出 */
+@keyframes cover-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+.animate-cover-fade-out {
+  animation: cover-fade-out 0.5s ease-out both;
+}
+
+/* 当前集数脉冲高亮 */
+@keyframes episode-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0);
+  }
+}
+.episode-current {
+  animation: episode-pulse 2s ease-in-out infinite;
+}
+
+/* 进度条拖拽优化 - 防止拖拽时文本选择和触摸滚动 */
+.sim-player-container .progress-bar-dragging {
+  cursor: grabbing !important;
+}
+.sim-player-container .progress-bar-dragging * {
+  pointer-events: none !important;
+}
+
+/* 音量/进度滑块样式 */
+input[type="range"].sim-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"].sim-range::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+input[type="range"].sim-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  margin-top: -5px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+input[type="range"].sim-range:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+input[type="range"].sim-range::-moz-range-track {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+input[type="range"].sim-range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+input[type="range"].sim-range:hover::-moz-range-thumb {
+  opacity: 1;
+}
